@@ -109,3 +109,6 @@ fun main() {
     println(list.filter{ it % 2 ==0 }.map{ it * 2 }.sum())
 }
 ```
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/c5df95c5-a049-4266-a6b8-f546c0200765" />
+
