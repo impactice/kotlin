@@ -24,3 +24,16 @@ import로 불러내자
 ## 연습
 
 <img width="1919" height="1036" alt="image" src="https://github.com/user-attachments/assets/63014154-8176-420f-8398-b2d8eb598ab7" />
+
+## person 만들기 
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/fb2ada30-3a99-41df-a0e6-a02fbee5bc90" />
+
+## person 두개 동시에 
+
+<img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/9a20abd7-54f1-4a32-868d-62468d6b56ec" />
+
+근데 이러면 햇갈림 
+
+<img width="1919" height="1035" alt="image" src="https://github.com/user-attachments/assets/9a7d6b98-b5df-4607-a5b1-2e9744f75ba5" />
+
