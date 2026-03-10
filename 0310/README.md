@@ -20,3 +20,7 @@ import로 불러내자
 <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/ffef5471-a7ab-4281-82a5-57404c8c1989" />
 
 이거는 출력 결과 
+
+## 연습
+
+<img width="1919" height="1036" alt="image" src="https://github.com/user-attachments/assets/63014154-8176-420f-8398-b2d8eb598ab7" />
