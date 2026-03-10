@@ -54,4 +54,6 @@ null을 받지 못함 해결방법
 
 <img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/37748bd0-5868-4d4c-ae87-ff8dfa9dc197" />
 
+## null 연습2 
 
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/c03d23d6-0eff-4491-a76d-fa17bf124e4e" />
