@@ -69,3 +69,15 @@ null을 받지 못함 해결방법
 ## any 연습 
 
 <img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/4f72a3ff-615b-4400-9588-dbe09f540a09" />
+
+## 디버그 Shift + F9
+
+<img width="1919" height="1036" alt="image" src="https://github.com/user-attachments/assets/5ac89e79-dd1b-402e-bb36-14e95406bb50" />
+
+여기에서 f8을 누르면 
+
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/6f1d66ad-7887-461e-8cd1-484d2184f8e2" />
+
+변수 형태를 바꾸어서 보고 싶다면 
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/cd6f39d1-98bf-414f-8d57-7abd09e8396e" />
