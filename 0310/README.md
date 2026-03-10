@@ -57,3 +57,12 @@ null을 받지 못함 해결방법
 ## null 연습2 
 
 <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/c03d23d6-0eff-4491-a76d-fa17bf124e4e" />
+
+## 자료형 검사 
+
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/aca47cd4-014a-401a-b5ae-bdbca76ad895" />
+
+## any 자료형 검사
+
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/7d20adf4-1365-4d8c-8440-4f3f32a5795b" />
+
