@@ -81,3 +81,31 @@ null을 받지 못함 해결방법
 변수 형태를 바꾸어서 보고 싶다면 
 
 <img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/cd6f39d1-98bf-414f-8d57-7abd09e8396e" />
+
+## java 방식과 코틀린 방식 
+java 
+```
+import java.util.*;
+
+public class TestSum {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        for(int i = 1; i < 10; i++)
+            list.add(i);
+        System.out.println(list);
+        int sum = 0;
+        for(int n : list)
+            sum += n;
+        System.out.println(sum);
+
+    }
+}
+
+```
+
+```
+fun main() {
+    val list = listOf(1,2,3,4,5)
+    println(list.filter{ it % 2 ==0 }.map{ it * 2 }.sum())
+}
+```
