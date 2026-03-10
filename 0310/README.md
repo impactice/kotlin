@@ -39,3 +39,15 @@ import로 불러내자
 <img width="1919" height="1035" alt="image" src="https://github.com/user-attachments/assets/9a7d6b98-b5df-4607-a5b1-2e9744f75ba5" />
 
 # 변수와 자료형
+
+## null 
+
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/d8f3229d-0694-4b03-98f0-7e97186dfcdd" />
+
+null을 받지 못함 해결방법 
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/f743967e-e356-4d20-8bd0-75cc2b493483" />
+
+<img width="1919" height="1035" alt="image" src="https://github.com/user-attachments/assets/35a614e8-b743-4230-9221-c699ea47d157" />
+
+
