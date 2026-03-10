@@ -1,3 +1,4 @@
+# 코틀린 패키지
 
 ## if) 같은 파일이 있으면? 
 
@@ -37,3 +38,4 @@ import로 불러내자
 
 <img width="1919" height="1035" alt="image" src="https://github.com/user-attachments/assets/9a7d6b98-b5df-4607-a5b1-2e9744f75ba5" />
 
+# 변수와 자료형
