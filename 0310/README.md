@@ -48,6 +48,10 @@ null을 받지 못함 해결방법
 
 <img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/f743967e-e356-4d20-8bd0-75cc2b493483" />
 
-<img width="1919" height="1035" alt="image" src="https://github.com/user-attachments/assets/35a614e8-b743-4230-9221-c699ea47d157" />
+## null 연습
+
+<img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/c88323bf-183e-40e7-9094-14e5822d032e" />
+
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/37748bd0-5868-4d4c-ae87-ff8dfa9dc197" />
 
 
