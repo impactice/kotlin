@@ -66,3 +66,6 @@ null을 받지 못함 해결방법
 
 <img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/7d20adf4-1365-4d8c-8440-4f3f32a5795b" />
 
+## any 연습 
+
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/4f72a3ff-615b-4400-9588-dbe09f540a09" />
