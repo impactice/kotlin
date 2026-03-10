@@ -14,3 +14,9 @@ package가 있어서 파일이 구분이 됨 하지만 package가 없으면
 Person이 파일에 없다 
 
 <img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/bdcfc2be-eee8-4d33-a4ff-0f59e83c8210" />
+
+import로 불러내자 
+
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/ffef5471-a7ab-4281-82a5-57404c8c1989" />
+
+이거는 출력 결과 
