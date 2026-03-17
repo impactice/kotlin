@@ -1,3 +1,7 @@
+# 함수형 프로그래밍 
+
+## 코틀린의 함수
+
 <img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/36e7356f-a892-4fd1-bd6a-7adc34c5a09a" />
 
 ```
@@ -97,3 +101,67 @@ fun add(name:String, email:String = "이메일없음") {
 }
 ```
 
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/37a77518-32ac-4d0e-9e44-7ff63d75b6df" />
+
+
+```
+package section1
+
+fun main() {
+    //println("함수 테스트 : 5+3 = ${sum(a=5,b=3)}")
+    //printSum(a=5,b=3)
+    //add(name="정문주", "mjlunar@ks.ac.kr")
+    //add(email = "눈덮인숲속마을",name="뽀로로")
+    printNumbers(n1=1,n2=2,n3=3)
+}
+fun printNumbers(n1: Int, n2: Int, n3: Int) {
+    println("n1=$n1\tn2=$n2\tn3=$n3")
+}
+// 코틀린 함수는 매개변수와 반환값의 자료형을 명시함
+fun sum(a: Int, b: Int): Int = a+b
+
+fun printSum(a: Int, b: Int) {
+    //println("sum of $a and $b is ${a+b}")
+}
+
+fun add(name:String, email:String = "이메일없음") {
+    //println("name : $name, email : $email")
+}
+```
+
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/9eef083c-4084-467e-b373-5e863fd32b6a" />
+
+
+```
+package section1
+
+fun main() {
+    //println("함수 테스트 : 5+3 = ${sum(a=5,b=3)}")
+    //printSum(a=5,b=3)
+    //add(name="정문주", "mjlunar@ks.ac.kr")
+    //add(email = "눈덮인숲속마을",name="뽀로로")
+    // 직접 값 나열
+    printNumbers(1, 2, 3)
+    // 배열을 펼쳐서 전달
+    val numbers = intArrayOf(1, 2, 3, 4)
+    printNumbers(*numbers)
+
+}
+fun printNumbers(vararg counts:Int) {
+    for(n in counts) {
+        print("$n ")
+    }
+}
+// 코틀린 함수는 매개변수와 반환값의 자료형을 명시함
+fun sum(a: Int, b: Int): Int = a+b
+
+fun printSum(a: Int, b: Int) {
+    //println("sum of $a and $b is ${a+b}")
+}
+
+fun add(name:String, email:String = "이메일없음") {
+    //println("name : $name, email : $email")
+}
+```
+
+## 함수형 프로그래밍 
