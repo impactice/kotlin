@@ -165,3 +165,181 @@ fun add(name:String, email:String = "이메일없음") {
 ```
 
 ## 함수형 프로그래밍 
+
+
+# 고차 함수와 람다식 
+
+## 고차 함수와 람다식 
+
+<img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/8d831eb5-4fac-420a-86b2-52e66633df39" />
+
+```
+package section2
+
+fun main() {
+    val res1 = sum(3, 2)  // 일반 인자
+    // 인자에 함수 호출 결과값 사용
+    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+    println("res1: $res1, res2: $res2")
+}
+
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+```
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/929106ff-7cf3-4a6c-b164-9dfbefda85c3" />
+
+```
+package section2
+
+fun main() {
+    val res1 = sum(3, 2)  // 일반 인자
+    // 인자에 함수 호출 결과값 사용
+    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+    println("res1: $res1, res2: $res2")
+    println("funcFunc: ${funcFunc()}")
+}
+
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+
+fun funcFunc(): Int { // 함수의 반환값으로 함수 호출 결과값 사용
+    return sum(2, 2)
+}
+```
+
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/cca1440d-1858-4479-be97-f68fbf76c923" />
+
+```
+package section2
+
+fun main() {
+    var result : Int
+    val multi = {x:Int,y:Int->x*y} //일반 변수에 람다식 할당 //val multi:(Int,Int) -> Int = {x:Int,y:Int->x*y} // val multi:(Int,Int) -> Int = {x,y->x*y} // 저거 다 됨
+    result = multi(1,2) // 람다식이 할당된 변수는 함수처럼 사용가능
+    println(result)
+//    val res1 = sum(3, 2)  // 일반 인자
+//    // 인자에 함수 호출 결과값 사용
+//    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+//    println("res1: $res1, res2: $res2")
+//    println("funcFunc: ${funcFunc()}")
+}
+
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+
+fun funcFunc(): Int { // 함수의 반환값으로 함수 호출 결과값 사용
+    return sum(2, 2)
+}
+```
+
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/336af173-b304-4cb9-a6cb-3a1667eb1aa4" />
+
+```
+package section2
+
+fun main() {
+    var result : Int
+    val multi = {x:Int,y:Int->x*y} //일반 변수에 람다식 할당 //val multi:(Int,Int) -> Int = {x:Int,y:Int->x*y} // val multi:(Int,Int) -> Int = {x,y->x*y} // 저거 다 됨
+    val multi2:(Int,Int) -> Int = {x,y->
+        println("x * y")
+        x*y
+    }
+    result = multi2(2,6) // 람다식이 할당된 변수는 함수처럼 사용가능
+    println(result)
+
+
+//    val res1 = sum(3, 2)  // 일반 인자
+//    // 인자에 함수 호출 결과값 사용
+//    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+//    println("res1: $res1, res2: $res2")
+//    println("funcFunc: ${funcFunc()}")
+}
+
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+
+fun funcFunc(): Int { // 함수의 반환값으로 함수 호출 결과값 사용
+    return sum(2, 2)
+}
+```
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/871c92f4-ce02-4222-ac63-6a14f26c883b" />
+
+```
+package section2
+
+fun main() {
+    var result : Int
+    val multi = {x:Int,y:Int->x*y} //일반 변수에 람다식 할당 //val multi:(Int,Int) -> Int = {x:Int,y:Int->x*y} // val multi:(Int,Int) -> Int = {x,y->x*y} // 저거 다 됨
+    val multi2:(Int,Int) -> Int = {x,y->
+        println("x * y")
+        x*y
+    }
+    result = multi2(2,6) // 람다식이 할당된 변수는 함수처럼 사용가능
+    println(result)
+    val greet: ()-> Unit = {println("Hello World!")} //val greet = {println("Hello World!")} // 이거 가능
+    greet()
+
+    val square:(Int) -> Int = {x:Int -> x * x}
+    val nestedLambda:() -> () -> Unit = {{println("hihi")}}
+
+//    val res1 = sum(3, 2)  // 일반 인자
+//    // 인자에 함수 호출 결과값 사용
+//    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+//    println("res1: $res1, res2: $res2")
+//    println("funcFunc: ${funcFunc()}")
+}
+
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+
+fun funcFunc(): Int { // 함수의 반환값으로 함수 호출 결과값 사용
+    return sum(2, 2)
+}
+```
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/1fc76da6-4870-489e-86dd-24ae658b9f23" />
+
+```
+package section2
+
+fun main() {
+    var result: Int
+    result = highOrder({x,y->x+y}, 10, 20)
+    println(result)
+
+    /*
+    var result : Int
+    val multi = {x:Int,y:Int->x*y} //일반 변수에 람다식 할당 //val multi:(Int,Int) -> Int = {x:Int,y:Int->x*y} // val multi:(Int,Int) -> Int = {x,y->x*y} // 저거 다 됨
+    val multi2:(Int,Int) -> Int = {x,y->
+        println("x * y")
+        x*y
+    }
+    result = multi2(2,6) // 람다식이 할당된 변수는 함수처럼 사용가능
+    println(result)
+    val greet: ()-> Unit = {println("Hello World!")} //val greet = {println("Hello World!")} // 이거 가능
+    greet()
+
+    val square:(Int) -> Int = {x:Int -> x * x}
+    val nestedLambda:() -> () -> Unit = {{println("hihi")}} */
+
+//    val res1 = sum(3, 2)  // 일반 인자
+//    // 인자에 함수 호출 결과값 사용
+//    val res2 = mul(sum(3,3), 3) // 인자에 함수를 사용
+//    println("res1: $res1, res2: $res2")
+//    println("funcFunc: ${funcFunc()}")
+}
+
+fun highOrder(sum:(Int,Int)->Int, a:Int, b:Int):Int {
+    return sum(a, b)
+}
+fun sum(a: Int, b: Int) = a + b
+fun mul(a: Int, b: Int) = a * b
+
+fun funcFunc(): Int { // 함수의 반환값으로 함수 호출 결과값 사용
+    return sum(2, 2)
+}
+```
+
+
