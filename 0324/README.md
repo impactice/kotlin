@@ -1,6 +1,7 @@
-# 코틀린 다양한 함수 알아보
+# 다양한 함수들
+## 코틀린 다양한 함수 알아보자
 
-## 인라인 함수 
+### 인라인 함수 
 
 ```
 fun shortFunc(a:Int, out:(Int)->Unit){
@@ -97,7 +98,7 @@ fun main() {
 }
 ```
 
-## 중위 함수 
+### 중위 함수 
 
 ```
 fun main() {
@@ -146,7 +147,7 @@ infix fun Int.days(unit: String): Long {
 
 <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/27c21f10-f66e-45f6-8015-a78301ea313f" />
 
-## 꼬리 재귀 함수 (Tail Recursive Function)
+### 꼬리 재귀 함수 (Tail Recursive Function)
 
 ```
 fun main() {
@@ -183,4 +184,36 @@ fun factorial1(n: Int, run: Int =1):Long{
 ```
 값은 같다 
 <img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/952b3407-58c8-470d-8b81-d20800918a60" />
+
+tailrec 키워드
+
+```
+fun main() {
+    val number = 4
+    val result: Long
+
+    //result = factorial(number)
+    result = factorial1(number)
+    println("Factorial : $number -> $result")
+}
+fun factorial(n: Int): Long{
+    return if(n==1) n.toLong() else n*factorial(n - 1)
+}
+
+tailrec fun factorial1(n: Int, run: Int =1):Long{
+    return if(n==1) run.toLong() else factorial1(n-1,run*n)
+}
+```
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/dc28ff77-5847-4411-b443-b27aef9868c7" />
+
+
+# 조건문과 반복문
+
+### 실습] 나이에 따른 입장료 계산하기
+
+어떤 공원의 입장료는 다음과 같다. 나이를 입력하면 입장료를 안내하는 코드를 작성해 보자.
+
+|나이|	2세미만|	2~13세|	14~19세|	20세 이상|
+|입장료|	없음|	1000원|	2000원|	2500원|
 
