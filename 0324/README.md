@@ -214,6 +214,91 @@ tailrec fun factorial1(n: Int, run: Int =1):Long{
 
 어떤 공원의 입장료는 다음과 같다. 나이를 입력하면 입장료를 안내하는 코드를 작성해 보자.
 
-|나이|	2세미만| 	2~13세|	14~19세|	20세 이상|
-|입장료|	 없음|	1000원|	2000원|	2500원|
+```
+// 나이에 따른 입장료 계산하기
+// 2세미만 없음 2~13세 1000원 14~19세 2000원 20세이상 2500원
+
+fun main() {
+//if문 사용
+     // 내가 작성한거
+    println("나이를 입력해주세요: ")
+    val old = readln().toInt()
+    if (old < 2) {
+        println("입장료 없음")
+    } else if (old in 2..13) {
+        println("입장료 1000원")
+    } else if (old in 14..19) {
+        println("입장료 2000원")
+    } else {
+        println("입장료 2500원")
+    }
+
+
+//when문 사용
+
+    var age = readLine()!!.toInt()
+    var result = when { // 인자가 없는 when문
+        age <2 -> 0
+        age in 2..13->1000
+        age in 14..19->2000
+        else -> 2500
+    }
+    val price = when(age) { // 인자가 있는 when문
+        in 2..13->1000
+        in 14..19->2000
+        in 20..Int.MAX_VALUE->2500
+        else -> {
+            println("돌 전엔 공짜")
+            //0 // 이거는 왜 적은 거지?
+        }
+    }
+    println(price)
+}
+
+
+```
+
+## 2. 반복문
+
+
+```
+fun main() {
+    for(i in 1..5) println(i) // 상행 반복
+    //for(i in 5..1) println(i) // 이거는 안됨
+    for(i in 5 downTo 1) println(i) //하행 반복
+    for(i in 1..5 step 2) println(i) //건너 뛰어 반복
+}
+```
+
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/1c50a8ae-0e0d-460f-ae97-cc49f8ebde39" />
+
+```
+fun main() {
+    val number = 4
+    val result: Long
+
+    //result = factorial(number)
+    result = factorial1(number)
+    println("Factorial : $number -> $result")
+}
+
+fun factorialwhile(n: Int): Long {  //while 추가
+    var number = n.toLong()
+    var result: Long = 1
+    while (number > 0) {
+        result *= number
+        --number
+    }
+    return result
+}
+
+fun factorial(n: Int): Long {
+    return if (n == 1) n.toLong() else n * factorial(n - 1)
+}
+
+tailrec fun factorial1(n: Int, run: Int = 1): Long {
+    return if (n == 1) run.toLong() else factorial1(n - 1, run * n)
+}
+```
 
