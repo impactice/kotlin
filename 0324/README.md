@@ -302,3 +302,27 @@ tailrec fun factorial1(n: Int, run: Int = 1): Long {
 }
 ```
 
+```
+fun main() {
+    val secret = (1..100).random()  // 비밀 숫자 생성
+    var guess: Int                   // 사용자 입력
+    var attempts = 0                 // 시도 횟수
+
+    println("=== 숫자 추리 게임 ===")
+    println("1~100 사이의 숫자를 맞춰보세요!\n")
+
+    do {
+        println("[시도 $attempts] 숫자를 입력하세요: ")
+        guess = readLine()!!.toInt()
+        // ... (입력받기) ...
+        guess = when {
+            
+
+
+        }
+
+
+        // ... (생략) ...
+    } while (secret == guess)
+}
+```
