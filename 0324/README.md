@@ -326,3 +326,41 @@ fun main() {
     } while (secret == guess)
 }
 ```
+
+```
+fun main() {
+    // 1부터 100 사이의 임의의 숫자를 생성하여 secret 변수에 저장합니다.
+    val secret = (1..100).random()
+
+    // 사용자가 입력한 숫자를 저장할 변수입니다. 초기값은 0으로 설정합니다.
+    var guess: Int = 0
+
+    // 사용자의 시도 횟수를 세기 위한 변수입니다. 0부터 시작합니다.
+    var attempts = 0
+
+    // 게임 시작 안내 문구를 출력합니다.
+    println("=== 숫자 추리 게임 ===")
+    println("1~100 사이의 숫자를 맞춰보세요!\n")
+
+    // 정답을 맞출 때까지 반복하는 do-while 문을 시작합니다.
+    do {
+        // 새로운 시도를 할 때마다 시도 횟수를 1씩 증가시킵니다.
+        attempts++
+
+        // 줄바꿈 없이 입력 프롬프트를 출력하여 예시와 동일한 형태를 만듭니다.
+        print("[시도 $attempts] 숫자를 입력하세요: ")
+
+        // 사용자의 입력을 받아 정수로 변환한 뒤 guess 변수에 저장합니다.
+        guess = readLine()!!.toInt()
+
+        // when 표현식을 사용하여 입력값(guess)과 정답(secret)의 크기를 비교합니다.
+        when {
+            guess < secret -> println("더 큽니다! ↑\n") // 입력값이 정답보다 작을 때
+            guess > secret -> println("더 작습니다! ↓\n") // 입력값이 정답보다 클 때
+            guess == secret -> println("정답입니다! ${attempts}번 만에 맞추셨습니다!") // 정답을 맞췄을 때
+        }
+
+        // 사용자가 입력한 값(guess)이 비밀 숫자(secret)와 '다를 동안' 계속 반복합니다.
+    } while (secret != guess)
+}
+```
