@@ -41,5 +41,5 @@ fun main() {
     coco.sing(10)
     //cozy.fly()
     //cozy.sing(10)
-    val bird1 = Bird(beak="Long",color = "black")
+
 }
