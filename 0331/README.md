@@ -207,3 +207,122 @@ fun main() {
 
 <img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/043069bb-6a09-4caa-a022-348a3aee2f06" />
 
+## 예외 발생시키기 (throw)
+
+```
+fun main() {
+    
+    var amount = 600
+
+    try {
+        amount -= 100
+        checkAmount(amount)
+    } catch (e : Exception){
+        println(e.message)
+    }
+    println("amount: $amount")
+}
+
+fun checkAmount(amount : Int){
+    if (amount < 1000)
+        throw Exception("잔고가 $amount 으로 1000 이하입니다.")
+}
+```
+
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/af6c852f-1f3b-49a5-bd37-0d83c009f459" />
+
+## 사용자 정의 예외
+
+```
+class InvalidAmountException(message:String) : Exception(message) 
+
+fun main(){
+    var name = "kildong123"
+    try {
+        validateName(name)
+    }catch (e:InvalidAmountException){
+        println(e.message)
+    }catch (e: Exception) {
+        println(e.message)
+    }
+}
+
+fun validateName(name: String){
+    if(name.matches(Regex(".*\\d+.*"))) {
+        throw InvalidAmountException("이름에 숫자가 포함되어 있습니다.")
+    }
+
+}
+```
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/1b39d33b-b3a9-48a2-8672-b0184f043200" />
+
+
+# 클래스와 객체의 정의 
+
+## 클래스 선언하기 
+
+```
+class Bird {
+    //property
+    var name:String = "bird1"  // 초기값들은 꼭 들어가 있어야 한다 -> 없으면 에러가 남
+    var wing:Int = 2
+    var beak:String = "short"
+    var color:String = "blue"
+
+    //method
+    fun fly() = println("Fly wing : $wing")
+    fun sing(vol:Int) = println("Singing $vol")
+}
+fun main() {
+    val coco = Bird()
+    coco.color = "red"
+
+    println("coco.color : ${coco.color}")
+    coco.fly()
+    coco.sing(10)
+
+}
+```
+
+<img width="1919" height="1033" alt="image" src="https://github.com/user-attachments/assets/ecd25c01-f820-4948-b5d0-bc57e1301888" />
+
+## Secondary Constructor(부 생성자)
+
+```
+class Bird {
+    //property - 생성자가 없을 때는 초기값을 할당해야 함!
+    var name:String = "bird1"  // 초기값들은 꼭 들어가 있어야 한다 -> 없으면 에러가 남
+    var wing:Int = 2
+    var beak:String = "short"
+    var color:String = "blue"
+
+    //secondary constructor
+    constructor(name:String, wing:Int, beak:String, color:String) {
+        this.name = name
+        this.wing = wing
+        this.beak = beak
+        this.color = color
+    }
+
+    //method
+    fun fly() = println("Fly wing : $wing")
+    fun sing(vol:Int) = println("Singing $vol")
+}
+fun main() {
+    val coco = Bird(name = "Coco", wing = 2, beak = "short",color = "red")
+    //coco.color = "red"
+
+    println("coco.color : ${coco.color}")
+    coco.fly()
+    coco.sing(10)
+
+}
+
+```
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/93d03e36-dc95-45dc-8031-0c56ccada2c3" />
+
+
+
+
