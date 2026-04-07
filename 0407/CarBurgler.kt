@@ -39,12 +39,30 @@ class Tico(_year:Int,_model:String,_power: String,_wheel: String,var name:String
     }
 }
 class Burglar(){
+    fun steal(anycar: Any) {
+        if(anycar is Tico){
+            println("============[Burglar] steal()========")
+            //anycar.power //protected라서 접근 불가
+            //anycar.year //private라서 접근 불가
 
+            println("anycar.model : ${anycar.model}")
+            println("anycar.name : ${anycar.name}")
+            println("anycar.wheel : ${anycar.wheel}")
+
+            //
+            println("anycar.Driver.license = ${anycar.driver.license}")
+            anycar.driver.driving()
+            //Car.start() //protect라서 안됨
+            anycar.access("dontknow")
+        }else{
+            println("Nothing steel")
+        }
+    }
 }
 fun main(){
     val tico = Tico("kildong", true)
     tico.access("gotico")
 
-//    val burglar = Burglar()
-//    burglar.steal(tico)
+    val burglar = Burglar()
+    burglar.steal(tico)
 }
