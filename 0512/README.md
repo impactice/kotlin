@@ -249,3 +249,237 @@ fun main() {
 
 <img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/93817d61-2074-4a71-b978-8e5757d74ab2" />
 
+### 여러 인터페이스의 구현
+
+### 다중 상속
+
+### [예제] 인터페이스 다중 상속
+
+### 인터페이스의 위임
+
+### 위임을 이용한 멤버 접근
+
+```
+interface Nameable{
+    val name: String
+}
+class StaffName:Nameable{
+    override val name: String = "Sean"
+}
+class Work:Runnable{
+    override fun run() {
+        println("Work...")
+    }
+}
+class Person(name:Nameable,work:Runnable):Nameable by name, Runnable by work
+fun main(){
+    val p = Person(StaffName(),Work())
+    val p2 = Person2(StaffName(),Work())
+    println(p.name)
+    p.run()
+}
+class Person2(name:StaffName,work:Work)
+```
+
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/22cad93c-168b-42b4-abf1-515fac9210a7" />
+
+### [응용] 커피 제조기 만들어 보기
+
+직접 해보라고 하심
+
+# 데이터 클래스와 기타 클래스
+
+## 2. 데이터 클래스와 기타 클래스
+
+### 데이터 전달을 위한 데이터 클래스
+
+### 데이터 클래스 선언하기
+
+```
+package section2
+
+data class Customer (var name:String, var email:String) {
+    var job:String = "Unknown"
+    constructor(name:String, email:String, _job:String) : this(name,email) {
+        job = _job
+    }
+    init{
+        println("data class")
+    }
+}
+// equals(), hashCode(), copy(), toString(), componentN() 이것들은 데이터 클래스가 자동 생성하는 메서드이다.
+
+fun main() {
+    val cus1 = Customer("John","john@mail.com")
+    val cus2 = Customer("Sean","sean@mail.com")
+    val cus3 = Customer("John","john@mail.com")
+    println(cus1 == cus2)
+    println(cus2 == cus3)
+    println(cus2.equals(cus3))
+    println("${cus2.hashCode()}, ${cus3.hashCode()}")
+}
+```
+
+<img width="1919" height="1025" alt="image" src="https://github.com/user-attachments/assets/0b589432-4e48-49a8-a91d-6f61f428e6f2" />
+
+
+```
+package section2
+
+data class Customer (var name:String, var email:String) {
+    var job:String = "Unknown"
+    constructor(name:String, email:String, _job:String) : this(name,email) {
+        job = _job
+    }
+    init{
+        println("data class")
+    }
+}
+// equals(), hashCode(), copy(), toString(), componentN() 이것들은 데이터 클래스가 자동 생성하는 메서드이다.
+
+fun main() {
+    val cus1 = Customer("John","john@mail.com")
+    val cus2 = Customer("Sean","sean@mail.com")
+    val cus3 = Customer("John","john@mail.com")
+    println(cus1 == cus2)
+    println(cus2 == cus3)
+    println(cus2.equals(cus3))
+    println("${cus2.hashCode()}, ${cus3.hashCode()}")
+    val cus4 = cus1.copy("Jack")
+    println(cus1.toString())
+    println(cus4.toString())
+}
+```
+
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/aad4fec8-367d-4df2-b9d2-34ff9529df7d" />
+
+### 객체 디스트럭쳐링(Destructuring) : 구조 분해 할당
+
+
+- 객체가 가지고 있는 프로퍼티를 **개별 변수로 분해하여 할당**하는 방법
+    
+    ```kotlin
+    val (name, email) = cus1
+    println("name = $name, email = $email")
+    ```
+    
+- 특정 프로퍼티를 가져 올 필요 없을 때는 **밑줄**로 표기
+    
+    ```kotlin
+    val (_, email) = cus1 // 첫 번째 프로퍼티 제외
+    ```
+    
+- **componentN()** 메서드 이용
+
+    ```kotlin
+    val name2 = cus1.component1()
+    val email2 = cus1.component2()
+    println("name = $name2, email = $email2")
+    ```
+- 객체 데이터가 많은 경우 반복문 사용
+    
+    ```kotlin
+    val cus1 = Customer("Sean", "sean@mail.com")
+    val cus2 = Customer("Sean", "sean@mail.com")
+    val bob = Customer("Bob", "bob@mail.com")
+    val erica = Customer("Erica", "erica@mail.com")
+     
+    val customers = listOf(cus1, cus2, bob, erica) // 모든 객체를 컬렉션 List 목록으로 구성
+    
+    **for((name, email) in customers) { // 반복문을 이용해 모든 객체의 프로퍼티 분해
+        println("name = $name, email = $email")
+    }**
+    ```
+    
+- 함수로부터 객체가 반환되는 경우 사용
+    
+    ```kotlin
+    fun myFunc(): Customer {
+        return Customer("Mickey", "mic@abc.com")
+    }
+    
+    val (myName, myEmail) = myFunc()
+    ```
+    
+- 람다식에서 사용
+
+    ```kotlin
+    // 람다식 함수로 Destructuring 된 변수 출력해 보기
+    val myLamda = {
+        (nameLa, emailLa): Customer ->
+        println(nameLa)
+        println(emailLa)
+    }
+    myLamda(cus1)
+    ```
+
+```
+package section2
+
+data class Customer (var name:String, var email:String) {
+    var job:String = "Unknown"
+    constructor(name:String, email:String, _job:String) : this(name,email) {
+        job = _job
+    }
+    init{
+        println("data class")
+    }
+}
+// equals(), hashCode(), copy(), toString(), componentN() 이것들은 데이터 클래스가 자동 생성하는 메서드이다.
+
+fun main() {
+    val cus1 = Customer("John","john@mail.com")
+    val cus2 = Customer("Sean","sean@mail.com")
+    val cus3 = Customer("John","john@mail.com")
+    println(cus1 == cus2)
+    println(cus2 == cus3)
+    println(cus2.equals(cus3))
+    println("${cus2.hashCode()}, ${cus3.hashCode()}")
+    val cus4 = cus1.copy("Jack")
+    println(cus1.toString())
+    println(cus4.toString())
+
+    //반복문을 이용한 모든 객체의 프로퍼티 분해
+    val customers = listOf(cus1, cus2, cus3,cus4)
+    for((name, email) in customers) {
+        println("name = $name, email = $email")
+    }
+    //함수 반환 값을 분해 저장
+    val (myName, myEmail) = myFunc()
+    println("$myName,$myEmail")
+
+    //람다식에서 사용하기
+    val myLambda = {
+        (numeLa,emilLa): Customer ->
+        println(numeLa)
+        println(emilLa)
+    }
+    myLambda(cus4)
+}
+fun myFunc():Customer{
+    return Customer("Mickey","mic@mail.com")
+}
+```
+
+<img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/4037f8c1-ae4b-45a5-ba8b-c2956515d7cd" />
+
+
+### 범용 데이터 클래스 Pair와 Triple
+
+### 내부 클래스 기법
+
+### 이너 클래스 (Inner Class)
+
+
+### 지역 클래스 (Local Class)
+
+### 익명 객체
+
+### 쉴드 클래스
+
+### 열거형 클래스 
+
+### 애노테이션 클래스
+(시험에는 안 나올 것 같대)
+
+
