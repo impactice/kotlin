@@ -34,7 +34,7 @@ winget install JetBrains.IntelliJIDEA.Community
 - **Coroutines & StateFlow**: `CoroutineScope.launch`와 `StateFlow`를 연동하여 비동기 백그라운드 작업의 로그를 Compose UI에 실시간(Reactive)으로 렌더링
 
 ## 🚀 실행 방법 (How to Run)
-이 프로젝트는 **Gradle Toolchain(Java 17)**을 사용하므로, 사용자의 PC에 자바 환경이 완벽히 구성되어 있지 않아도 Gradle이 알아서 필요한 JDK를 임시로 다운로드하여 실행해 줍니다. (Foojay 플러그인 적용 완료)
+이 프로젝트는 ** Gradle Toolchain(Java 17) **을 사용하므로, 사용자의 PC에 자바 환경이 완벽히 구성되어 있지 않아도 Gradle이 알아서 필요한 JDK를 임시로 다운로드하여 실행해 줍니다. (Foojay 플러그인 적용 완료)
 ```bash
 # 1. 레포지토리 클론
 git clone https://github.com/사용자계정/SpaceExplorer.git
