@@ -7,7 +7,8 @@ winget install JetBrains.IntelliJIDEA.Community
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue.svg?logo=kotlin)
 ![Compose Desktop](https://img.shields.io/badge/Compose_for_Desktop-1.6.0-green.svg)
-![Coroutines](https://img.shields.io/badge/Coroutines-1.8.0-purple.svg)
+![Coroutines](https://img.shields.io/badge/Coroutines-1.8.0-purple.svg)  
+
 **Space Explorer**는 Kotlin의 핵심 객체지향 및 함수형 프로그래밍 개념을 적극 활용하여 개발된 데스크톱 기반 우주 개척 시뮬레이션입니다. 
 단순한 텍스트 CLI 환경을 넘어, **Compose for Desktop**을 활용한 모던 GUI와 **Kotlin Coroutines**을 통한 비동기 채굴 시스템을 도입하여 기술적 완성도를 높였습니다.
 
